@@ -1,0 +1,211 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: dhcp-primary
+    namespace: dhcp
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: dhcp-primary
+      spec:
+        affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              - labelSelector:
+                  matchExpressions:
+                    - key: "app"
+                      operator: In
+                      values:
+                      - dhcp-primary
+                      - dhcp-secondary
+                topologyKey: "kubernetes.io/hostname"
+        hostname: primary
+        subdomain: dhcp-pod
+        containers:
+        - name: dhcpd
+          image: npflan/dhcp:fix-port
+          args:
+            - '-d'
+            - '-cf'
+            - '/dhcp/config/dhcpd.conf'
+          volumeMounts:
+            - mountPath: /var/lib/dhcp
+              name: iscsipd-dhcp-1
+            - mountPath: /dhcp/config
+              name: dhcp
+            - mountPath: /dhcp/failover
+              name: dhcp-failover
+          resources:
+            limits:
+              memory: 100M
+        volumes:
+          - name: iscsipd-dhcp-1
+            iscsi:
+              targetPortal: 192.168.255.10:3260
+              portals: ['192.168.255.11:3260', '192.168.255.12:3260', '192.168.255.13:3260', '192.168.255.14:3260']
+              iqn: iqn.2001-05.com.equallogic:0-8a0906-d9eb41907-b66c58382ac59d03-k8s.isc.dhcp1
+              lun: 0
+              fsType: ext4
+              readOnly: false
+          - name: dhcp
+            configMap:
+              name: dhcpd
+              items:
+              - key: dhcpd.conf
+                path: dhcpd.conf
+          - name: dhcp-failover
+            configMap:
+              name: dhcp-failover
+              items:
+              - key: dhcpd.master
+                path: dhcpd.failover
+        initContainers:
+          - name: install
+            image: busybox
+            command:
+              - touch
+              - "/var/lib/dhcp/dhcpd.leases"
+            volumeMounts:
+            - mountPath: /var/lib/dhcp
+              name: iscsipd-dhcp-1
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: dhcp-secondary
+    namespace: dhcp
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: dhcp-secondary
+      spec:
+        affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              - labelSelector:
+                  matchExpressions:
+                    - key: "app"
+                      operator: In
+                      values:
+                      - dhcp-primary
+                      - dhcp-secondary
+                topologyKey: "kubernetes.io/hostname"
+        hostname: secondary
+        subdomain: dhcp-pod
+        containers:
+        - name: dhcpd
+          image: npflan/dhcp:fix-port
+          args:
+            - '-d'
+            - '-cf'
+            - '/dhcp/config/dhcpd.conf'
+          volumeMounts:
+            - mountPath: /var/lib/dhcp
+              name: iscsipd-dhcp-2
+            - mountPath: /dhcp/config
+              name: dhcp
+            - mountPath: /dhcp/failover
+              name: dhcp-failover
+          resources:
+            limits:
+              memory: 100M
+        volumes:
+          - name: iscsipd-dhcp-2
+            iscsi:
+              targetPortal: 192.168.255.10:3260
+              portals: ['192.168.255.11:3260', '192.168.255.12:3260', '192.168.255.13:3260', '192.168.255.14:3260']
+              iqn: iqn.2001-05.com.equallogic:0-8a0906-dbfb41907-cf1c58382af59d03-k8s.isc.dhcp2
+              lun: 0
+              fsType: ext4
+              readOnly: false
+          - name: dhcp
+            configMap:
+              name: dhcpd
+              items:
+              - key: dhcpd.conf
+                path: dhcpd.conf
+          - name: dhcp-failover
+            configMap:
+              name: dhcp-failover
+              items:
+              - key: dhcpd.slave
+                path: dhcpd.failover
+        initContainers:
+          - name: install
+            image: busybox
+            command:
+              - touch
+              - "/var/lib/dhcp/dhcpd.leases"
+            volumeMounts:
+            - mountPath: /var/lib/dhcp
+              name: iscsipd-dhcp-2
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: headless-primary
+    namespace: dhcp
+  spec:
+    clusterIP: None
+    selector:
+      app: dhcp-primary
+    ports:
+      - name: dhcp-control
+        protocol: TCP
+        port: 647
+        targetPort: 647
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: headless-secondary
+    namespace: dhcp
+  spec:
+    clusterIP: None
+    selector:
+      app: dhcp-secondary
+    ports:
+      - name: dhcp-control
+        protocol: TCP
+        port: 647
+        targetPort: 647
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: dhcp-primary
+    namespace: dhcp
+  spec:
+    clusterIP: 10.96.6.1
+    selector:
+      app: dhcp-primary
+    ports:
+      - name: dhcp
+        protocol: UDP
+        port: 67
+        targetPort: 67
+      - name: dhcp-control
+        protocol: TCP
+        port: 647
+        targetPort: 647
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: dhcp-secondary
+    namespace: dhcp
+  spec:
+    clusterIP: 10.96.6.2
+    selector:
+      app: dhcp-secondary
+    ports:
+      - name: dhcp
+        protocol: UDP
+        port: 67
+        targetPort: 67
+      - name: dhcp-control
+        protocol: TCP
+        port: 647
+        targetPort: 647

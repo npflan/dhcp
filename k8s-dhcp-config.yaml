@@ -1,0 +1,31 @@
+apiVersion: v1
+data:
+  dhcpd.master: |-
+    failover peer "failover-partner" {
+      primary;
+      address primary.dhcp-pod.dhcp.svc.cluster.local;
+      port 647;
+      peer address headless-secondary.dhcp.svc.cluster.local;
+      peer port 647;
+      max-response-delay 10;
+      max-unacked-updates 10;
+      mclt 3600;
+      split 128;
+      load balance max seconds 5;
+    }
+  dhcpd.slave: |-
+    failover peer "failover-partner" {
+      secondary;
+      address secondary.dhcp-pod.dhcp.svc.cluster.local;
+      port 647;
+      peer address headless-primary.dhcp.svc.cluster.local;
+      peer port 647;
+      max-response-delay 10;
+      max-unacked-updates 10;
+      load balance max seconds 5;
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: dhcp-failover
+  namespace: dhcp
