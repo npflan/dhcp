@@ -34,11 +34,35 @@ This deployment uses several kubernetes features, these are mostly driven by ass
 -  It would possibly be more clean to use the new [statefulset](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/), so we could avoid the duplicate deployments, this is something to look into for NPF 2018. We do not have support for PersistentVolumeClaims, but only PersistentVolumes in our iSCSI SAN, which is maybe a bit hard to do with statefulsets atm.
 
 
+#### Updating config
+
+Generate new data and upload it to kubernetes. The python script will download the prefixes from netbox directly.
+
+``` shell
+python3 config/isc_dhcp_config_gen.py > dhcpd.conf
+kubectl create --dry-run configmap dhcpd --from-file=dhcpd.conf -n dhcp -o yaml | kubectl replace -f - -n dhcp
+```
+
+After the config is updated, log into a pod in the deployment and test the config. Make sure the new config has been propagated, as there is a TTL cache on kubernetes config maps.
+
+``` shell
+  dhcpd -t -cf /dhcp/config/dhcpd.conf
+```
+
+If the config is syntactically valid, "reload" dhcpd by restarting it, if you just kill dhcpd kubernetes will restart the pod.
+
+``` shell
+killall dhcpd
+```
+
+### Caveats
+
+- DHCPd is very bad at updating the DNS results for it failover peers, so after the pods have changed IPs, you might need to restart DHCPd so it can pick up the changes.
+
 ### TODO
 
 - Readiness / liveness checks
   - Preferably a check that will actually obtain an IP address
 - The config values need to be discussed and verified
-- Testing and validation of failover scenarios
 - OMAPI key should be put in a kubernetes secret
 - Metrics for prometheus

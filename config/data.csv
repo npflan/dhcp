@@ -1,13 +1,7 @@
 prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
-172.20.0.0/30,,,,,,Active,,,Kube Link Node 1 C1
-172.20.1.0/30,,,,,,Active,,,Kube Link Node 1 C2
-217.63.127.0/24,,,,,,Container,,,Public IPs
-217.63.127.0/25,,,,,,Container,,,Firewall 1 NAT scope
-217.63.127.128/25,,,,,,Container,,,Firewall 2 NAT scope
 10.0.0.0/24,npflan,,npflan,,,Active,Firewall Net,,
 10.0.1.0/24,npflan,,npflan,,,Active,Services,,Network Services
 10.0.11.0/24,npflan,,,,,Active,Wireless,,Wifi net til netværksteamet (Administrativt ude på dist punkterne)
-10.1.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 1
 10.1.11.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 11
 10.1.12.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 12
 10.1.13.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 13
@@ -16,13 +10,9 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.1.16.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 16
 10.1.17.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 17
 10.1.18.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 18
+10.1.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.1.250.0/24,npflan,,npflan,,,Active,,,CCTV
-10.1.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.1.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.1.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.1.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
 10.1.255.0/24,npflan,,npflan,,,Active,Management Access Points,,Dist 1 - Wireless MGMT
-10.2.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 2
 10.2.11.0/24,npflan,,npflan,,,Active,Access,,Dist 2 - Vlan 11
 10.2.12.0/24,npflan,,npflan,,,Active,Access,,Dist 2 - Vlan 12
 10.2.13.0/24,npflan,,npflan,,,Active,Access,,Dist 2 - Vlan 13
@@ -31,13 +21,9 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.2.16.0/24,npflan,,npflan,,,Active,Access,,Dist 2 - Vlan 16
 10.2.17.0/24,npflan,,npflan,,,Active,Access,,Dist 2 - Vlan 17
 10.2.18.0/24,npflan,,npflan,,,Active,Access,,Dist 2 - Vlan 18
+10.2.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.2.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.2.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.2.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.2.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.2.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
 10.2.255.0/24,npflan,,npflan,,,Active,Management Access Points,,Dist 2 - Wireless MGMT
-10.3.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 3
 10.3.11.0/24,npflan,,npflan,,,Active,Access,,Dist 3 - Vlan 11
 10.3.12.0/24,npflan,,npflan,,,Active,Access,,Dist 3 - Vlan 12
 10.3.13.0/24,npflan,,npflan,,,Active,Access,,Dist 3 - Vlan 13
@@ -46,13 +32,9 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.3.16.0/24,npflan,,npflan,,,Active,Access,,Dist 4 - Vlan 16
 10.3.17.0/24,npflan,,npflan,,,Active,Access,,Dist 3 - Vlan 17
 10.3.18.0/24,npflan,,npflan,,,Active,Access,,Dist 3 - Vlan 18
+10.3.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.3.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.3.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.3.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.3.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.3.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
 10.3.255.0/24,npflan,,npflan,,,Active,Management Access Points,,Dist 3 - Wireless MGMT
-10.4.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 4
 10.4.11.0/24,npflan,,npflan,,,Active,Access,,Dist 4 - Vlan 11
 10.4.12.0/24,npflan,,npflan,,,Active,Access,,Dist 4 - Vlan 12
 10.4.13.0/24,npflan,,npflan,,,Active,Access,,Dist 4 - Vlan 13
@@ -61,13 +43,9 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.4.16.0/24,npflan,,npflan,,,Active,Access,,Dist 4 - Vlan 16
 10.4.17.0/24,npflan,,npflan,,,Active,Access,,Dist 4 - Vlan 17
 10.4.18.0/24,npflan,,npflan,,,Active,Access,,Dist 4 - Vlan 18
+10.4.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.4.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.4.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.4.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.4.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.4.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
 10.4.255.0/24,npflan,,npflan,,,Active,Management Access Points,,Dist 4 - Wireless Management
-10.5.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 5
 10.5.11.0/24,npflan,,npflan,,,Active,Access,,Dist 5 - Vlan 11
 10.5.12.0/24,npflan,,npflan,,,Active,Access,,Dist 5 - Vlan 12
 10.5.13.0/24,npflan,,npflan,,,Active,Access,,Dist 5 - Vlan 13
@@ -76,12 +54,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.5.16.0/24,npflan,,npflan,,,Active,Access,,Dist 5 - Vlan 16
 10.5.17.0/24,npflan,,npflan,,,Active,Access,,Dist 5 - Vlan 17
 10.5.18.0/24,npflan,,npflan,,,Active,Access,,Dist 5 - Vlan 18
+10.5.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.5.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.5.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.5.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.5.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.5.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.6.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 6
 10.6.11.0/24,npflan,,npflan,,,Active,Access,,Dist 6 - Vlan 11
 10.6.12.0/24,npflan,,npflan,,,Active,Access,,Dist 6 - Vlan 12
 10.6.13.0/24,npflan,,npflan,,,Active,Access,,Dist 6 - Vlan 13
@@ -90,12 +64,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.6.16.0/24,npflan,,npflan,,,Active,Access,,Dist 6 - Vlan 16
 10.6.17.0/24,npflan,,npflan,,,Active,Access,,Dist 6 - Vlan 17
 10.6.18.0/24,npflan,,npflan,,,Active,Access,,Dist 6 - Vlan 18
+10.6.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.6.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.6.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.6.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.6.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.6.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.7.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 7
 10.7.11.0/24,npflan,,npflan,,,Active,Access,,Dist 7 - Vlan 11
 10.7.12.0/24,npflan,,npflan,,,Active,Access,,Dist 7 - Vlan 12
 10.7.13.0/24,npflan,,npflan,,,Active,Access,,Dist 7 - Vlan 13
@@ -104,12 +74,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.7.16.0/24,npflan,,npflan,,,Active,Access,,Dist 7 - Vlan 16
 10.7.17.0/24,npflan,,npflan,,,Active,Access,,Dist 7 - Vlan 17
 10.7.18.0/24,npflan,,npflan,,,Active,Access,,Dist 7 - Vlan 18
+10.7.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.7.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.7.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.7.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.7.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.7.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.8.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 8
 10.8.11.0/24,npflan,,npflan,,,Active,Access,,Dist 8 - Vlan 11
 10.8.12.0/24,npflan,,npflan,,,Active,Access,,Dist 8 - Vlan 12
 10.8.13.0/24,npflan,,npflan,,,Active,Access,,Dist 8 - Vlan 13
@@ -118,12 +84,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.8.16.0/24,npflan,,npflan,,,Active,Access,,Dist 8 - Vlan 16
 10.8.17.0/24,npflan,,npflan,,,Active,Access,,Dist 8 - Vlan 17
 10.8.18.0/24,npflan,,npflan,,,Active,Access,,Dist 8 - Vlan 18
+10.8.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.8.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.8.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.8.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.8.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.8.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.9.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 9
 10.9.11.0/24,npflan,,npflan,,,Active,Access,,Dist 9 - Vlan 11
 10.9.12.0/24,npflan,,npflan,,,Active,Access,,Dist 9 - Vlan 12
 10.9.13.0/24,npflan,,npflan,,,Active,Access,,Dist 9 - Vlan 13
@@ -132,12 +94,9 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.9.16.0/24,npflan,,npflan,,,Active,Access,,Dist 9 - Vlan 16
 10.9.17.0/24,npflan,,npflan,,,Active,Access,,Dist 9 - Vlan 17
 10.9.18.0/24,npflan,,npflan,,,Active,Access,,Dist 9 - Vlan 18
+10.9.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.9.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
 10.9.251.0/24,npflan,,npflan,,,Active,Access,,Wireless - NPFCREW
-10.9.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.9.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.9.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.10.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 10
 10.10.11.0/24,npflan,,npflan,,,Active,Access,,Dist 10 - Vlan 11
 10.10.12.0/24,npflan,,npflan,,,Active,Access,,Dist 10 - Vlan 12
 10.10.13.0/24,npflan,,npflan,,,Active,Access,,Dist 10 - Vlan 13
@@ -146,12 +105,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.10.16.0/24,npflan,,npflan,,,Active,Access,,Dist 10 - Vlan 16
 10.10.17.0/24,npflan,,npflan,,,Active,Access,,Dist 10 - Vlan 17
 10.10.18.0/24,npflan,,npflan,,,Active,Access,,Dist 10 - Vlan 18
+10.10.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.10.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.10.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.10.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.10.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.10.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.11.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 11
 10.11.11.0/24,npflan,,npflan,,,Active,Access,,Dist 11 - Vlan 11
 10.11.12.0/24,npflan,,npflan,,,Active,Access,,Dist 11 - Vlan 12
 10.11.13.0/24,npflan,,npflan,,,Active,Access,,Dist 11 - Vlan 13
@@ -160,12 +115,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.11.16.0/24,npflan,,npflan,,,Active,Access,,Dist 11 - Vlan 16
 10.11.17.0/24,npflan,,npflan,,,Active,Access,,Dist 11 - Vlan 17
 10.11.18.0/24,npflan,,npflan,,,Active,Access,,Dist 11 - Vlan 18
+10.11.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.11.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.11.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.11.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.11.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.11.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.12.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 12
 10.12.11.0/24,npflan,,npflan,,,Active,Access,,Dist 12 - Vlan 11
 10.12.12.0/24,npflan,,npflan,,,Active,Access,,Dist 12 - Vlan 12
 10.12.13.0/24,npflan,,npflan,,,Active,Access,,Dist 12 - Vlan 13
@@ -174,12 +125,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.12.16.0/24,npflan,,npflan,,,Active,Access,,Dist 12 - Vlan 16
 10.12.17.0/24,npflan,,npflan,,,Active,Access,,Dist 12 - Vlan 17
 10.12.18.0/24,npflan,,npflan,,,Active,Access,,Dist 12 - Vlan 18
+10.12.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.12.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.12.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.12.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.12.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.12.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.13.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 13
 10.13.11.0/24,npflan,,npflan,,,Active,Access,,Dist 13 - Vlan 11
 10.13.12.0/24,npflan,,npflan,,,Active,Access,,Dist 13 - Vlan 12
 10.13.13.0/24,npflan,,npflan,,,Active,Access,,Dist 13 - Vlan 13
@@ -188,12 +135,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.13.16.0/24,npflan,,npflan,,,Active,Access,,Dist 13 - Vlan 16
 10.13.17.0/24,npflan,,npflan,,,Active,Access,,Dist 13 - Vlan 17
 10.13.18.0/24,npflan,,npflan,,,Active,Access,,Dist 13 - Vlan 18
+10.13.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.13.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.13.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.13.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.13.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.13.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.14.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist 14
 10.14.11.0/24,npflan,,npflan,,,Active,Access,,Dist 14 - Vlan 11
 10.14.12.0/24,npflan,,npflan,,,Active,Access,,Dist 14 - Vlan 12
 10.14.13.0/24,npflan,,npflan,,,Active,Access,,Dist 14 - Vlan 13
@@ -202,35 +145,28 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.14.16.0/24,npflan,,npflan,,,Active,Access,,Dist 14 - Vlan 16
 10.14.17.0/24,npflan,,npflan,,,Active,Access,,Dist 14 - Vlan 17
 10.14.18.0/24,npflan,,npflan,,,Active,Access,,Dist 14 - Vlan 18
+10.14.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.14.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.14.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.14.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.14.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.14.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.90.0.0/16,npflan,,,,,Container,Services,,Kubernetes Pod Network
-10.96.0.0/14,npflan,,,,,Container,Services,,Kubernetes Service Net
-10.100.0.0/16,npflan,,npflan,,,Container,Server Net,,
-10.100.0.0/23,npflan,,npflan,,,Active,,,Gameserver Rack #3
-10.100.2.0/23,npflan,,npflan,,,Active,,,Gameserver Rack #6
-10.100.4.0/23,npflan,,npflan,,,Active,,,Gameserver Rack #7
-10.100.103.0/24,npflan,,npflan,,,Active,Server Net,,Public Rack #3
-10.100.106.0/24,npflan,,npflan,,,Active,Server Net,,Public Rack #6
-10.100.107.0/24,npflan,,npflan,,,Active,Server Net,,Public Rack #7
-10.100.203.0/24,npflan,,npflan,,,Active,Management Server,,Management Rack #3
-10.100.206.0/24,npflan,,npflan,,,Active,Management Server,,Management Rack #6
-10.100.207.0/24,npflan,,npflan,,,Active,Management Server,,Management Rack #7
+10.100.0.0/22,npflan,,npflan,,,Active,,True,gameserver rack 3
+10.100.4.0/22,npflan,,npflan,,,Active,,,gameserver rack 6
+10.100.8.0/22,npflan,,npflan,,,Active,,True,gameserver rack 7
+10.100.103.0/24,npflan,,npflan,,100,Active,Server Net,,Public Rack #3
+10.100.106.0/24,npflan,,npflan,,100,Active,Server Net,,Public Rack #6
+10.100.107.0/24,npflan,,npflan,,100,Active,Server Net,,Public Rack #7
+10.100.203.0/24,npflan,,npflan,,200,Active,Management Server,,Management Rack #3
+10.100.206.0/24,npflan,,npflan,,200,Active,Management Server,,Management Rack #6
+10.100.207.0/24,npflan,,npflan,,200,Active,Management Server,,Management Rack #7
 10.100.255.0/24,npflan,,npflan,,,Active,Link Net,,Server Public-Private
 10.100.255.0/30,npflan,,npflan,,,Active,Link Net,,TOR6-TOR7
 10.100.255.4/30,npflan,,npflan,,,Active,Link Net,,TOR6-TOR3
 10.100.255.8/30,npflan,,npflan,,,Active,Link Net,,TOR3-TOR7
 10.100.255.12/30,npflan,,npflan,,,Active,Link Net,,TOR3-Duconet
 10.222.11.0/24,npflan,,npflan,,,Active,Access,,VLAN 222 på Core 2
-,,,,,,,,,
+10.248.0.0/16,npflan,,npflan,,,Active,Wireless,,Wireless Networks
 10.248.0.0/18,npflan,,npflan,npflan-vlans,250,Active,Wireless,,Wifi Crew & Management
 10.248.64.0/18,npflan,,npflan,npflan-vlans,251,Active,Wireless,,Wireless Billet
 10.248.128.0/18,npflan,,npflan,npflan-vlans,252,Active,Wireless,,Wireless Expo
 10.248.192.0/18,npflan,,npflan,npflan-vlans,253,Active,Wireless,,Wireless Adm
-10.250.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist E5
 10.250.11.0/24,npflan,,npflan,,,Active,Access,,Marketing - Vlan 11
 10.250.12.0/24,npflan,,npflan,,,Active,Access,,Marketing - Vlan 12
 10.250.13.0/24,npflan,,npflan,,,Active,Access,,Marketing - Vlan 13
@@ -239,12 +175,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.250.16.0/24,npflan,,npflan,,,Active,Access,,Marketing - Vlan 16
 10.250.17.0/24,npflan,,npflan,,,Active,Access,,Marketing - Vlan 17
 10.250.18.0/24,npflan,,npflan,,,Active,Access,,Marketing - Vlan 18
+10.250.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.250.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.250.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.250.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.250.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.250.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.251.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist E4
 10.251.11.0/24,npflan,,npflan,,,Active,Access,,Dist E4 - Vlan 11
 10.251.12.0/24,npflan,,npflan,,,Active,Access,,Dist E4 - Vlan 12
 10.251.13.0/24,npflan,,npflan,,,Active,Access,,Dist E4 - Vlan 13
@@ -253,12 +185,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.251.16.0/24,npflan,,npflan,,,Active,Access,,Dist E4 - Vlan 16
 10.251.17.0/24,npflan,,npflan,,,Active,Access,,Dist E4 - Vlan 17
 10.251.18.0/24,npflan,,npflan,,,Active,Access,,Dist E4 - Vlan 18
+10.251.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.251.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.251.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.251.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.251.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.251.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.252.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist E3
 10.252.11.0/24,npflan,,npflan,,,Active,Access,,
 10.252.12.0/24,npflan,,npflan,,,Active,Access,,Dist E3 - Vlan 12
 10.252.13.0/24,npflan,,npflan,,,Active,Access,,Dist E3 - Vlan 13
@@ -267,12 +195,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.252.16.0/24,npflan,,npflan,,,Active,Access,,Dist E3 - Vlan 16
 10.252.17.0/24,npflan,,npflan,,,Active,Access,,Dist E3 - Vlan 17
 10.252.18.0/24,npflan,,npflan,,,Active,Access,,Dist E3 - Vlan 18
+10.252.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.252.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.252.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.252.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.252.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.252.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.253.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist E2
 10.253.11.0/24,npflan,,npflan,,,Active,Access,,Dist E2 - Vlan 11
 10.253.12.0/24,npflan,,npflan,,,Active,Access,,Dist E2 - Vlan 12
 10.253.13.0/24,npflan,,npflan,,,Active,Access,,Dist E2 - Vlan 13
@@ -281,11 +205,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.253.16.0/24,npflan,,npflan,,,Active,Access,,Dist E2 - Vlan 16
 10.253.17.0/24,npflan,,npflan,,,Active,Access,,Dist E2 - Vlan 17
 10.253.18.0/24,npflan,,npflan,,,Active,Access,,Dist E2 - Vlan 18
+10.253.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.253.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.253.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.253.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.253.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.254.0.0/16,npflan,,npflan,,,Container,Distribution Net,,Dist E1
 10.254.11.0/24,npflan,,npflan,,,Active,Access,,Dist E1 - Vlan 11
 10.254.12.0/24,npflan,,npflan,,,Active,Access,,Dist E1 - Vlan 12
 10.254.13.0/24,npflan,,npflan,,,Active,Access,,Dist E1 - Vlan 13
@@ -294,64 +215,36 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.254.16.0/24,npflan,,npflan,,,Active,Access,,Dist E1 - Vlan 16
 10.254.17.0/24,npflan,,npflan,,,Active,Access,,Dist E1 - Vlan 17
 10.254.18.0/24,npflan,,npflan,,,Active,Access,,Dist E1 - Vlan 18
+10.254.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.254.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.254.251.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFCREW
-10.254.252.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFADM
-10.254.253.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFEXPO
-10.254.254.0/24,npflan,,npflan,,,Active,Wireless,,Wireless - NPFBILLET
-10.255.192.0/18,npflan,,npflan,,,Container,Management  Netværk,,Netværk Management
 10.255.200.0/25,npflan,,npflan,,,Active,Management  Netværk,,Core1 - Access/Wireless Management
 10.255.200.128/25,npflan,,npflan,,,Active,Management  Netværk,,Core2 - Acess/Wireless Management
 10.255.201.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 1 - Access Management
-10.255.201.192/26,npflan,,npflan,,,Active,Wireless,,AP DHCP
 10.255.202.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 2 - Access Management
-10.255.202.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.203.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 3 - Access Management
-10.255.203.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.204.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 4 - Access Management
-10.255.204.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.205.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 5 - Access Management
-10.255.205.0/25,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.206.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 6 - Access Management
-10.255.206.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.207.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 7 - Access Management
-10.255.207.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.208.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 8 - Access Management
-10.255.208.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.209.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 9 - Access Management
-10.255.209.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.210.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 10 - Access Management
-10.255.210.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.211.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 11 - Access Management
-10.255.211.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.212.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 12 - Access Management
-10.255.212.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.213.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 13 - Access Management
-10.255.213.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.214.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist 14 - Access Management
-10.255.214.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
-10.255.250.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.251.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist E4 - Access Management
-10.255.251.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.252.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist E3 - Access Management
-10.255.252.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.253.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist E2 - Access Management
-10.255.253.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.254.0/24,npflan,,npflan,,,Active,Management  Netværk,,Dist E1 - Access Management
-10.255.254.192/26,npflan,,npflan,npflan-access,193,Active,Wireless,,AP DHCP
 10.255.255.0/24,npflan,,npflan,,,Active,Management  Netværk,,Backbone Management
-172.16.0.0/29,npflan,,npflan,,,Container,Core Net,,
 172.16.16.0/24,npflan,,npflan,npflan-shop,1,Active,Shop,,Shoppen
-172.20.0.0/16,npflan,,,,,Container,,,Kubernetes Link Nets
 172.20.0.0/30,npflan,,,,,Active,,,Kube Link Master C1
 172.20.0.4/30,npflan,,,,,Active,,,Kube Link Node 1 C1
 172.20.0.8/30,npflan,,,,,Active,,,Kube Link Node 2 C1
 172.20.1.0/30,npflan,,,,,Active,,,Kube Link Master C2
 172.20.1.4/30,npflan,,,,,Active,,,Kube Link Node 1 C2
 172.20.1.8/30,npflan,,,,,Active,,,Kube Link Node 2 C2
-172.20.11.0/24,npflan,,,,,Container,,,Kubernetes Link Nets Core 1
-172.20.22.0/24,npflan,,,,,Container,,,Kubernetes Link Nets Core 2
-192.168.0.0/16,npflan,,npflan,,,Container,Link Net,,
 192.168.0.0/28,npflan,,npflan,,,Active,Link Net,,Core1 - Dist1
 192.168.0.16/28,npflan,,npflan,,,Active,Link Net,,Dist1 - Dist2
 192.168.0.32/28,npflan,,npflan,,,Active,Link Net,,Dist2 - Dist3
@@ -374,6 +267,7 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 192.168.1.48/28,npflan,,npflan,,,Active,Link Net,,(Dist 13 - Dist 15 Opt)
 192.168.1.64/28,npflan,,npflan,,,Active,Link Net,,(Dist 15 - Dist 16 Opt)
 192.168.1.80/28,npflan,,npflan,,,Active,Link Net,,(Dist 16 - Dist 14 Opt)
+192.168.255.0/28,npflan,,npflan,,,Active,Services,,Network Services SAN
 192.168.255.112/28,npflan,,npflan,,,Active,Link Net,,E4 - Core2
 192.168.255.128/28,npflan,,npflan,,,Active,Link Net,,E3 - E4
 192.168.255.144/28,npflan,,npflan,,,Active,Link Net,,E2 - E3
@@ -382,6 +276,7 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 192.168.255.208/30,npflan,,npflan,,,Active,Link Net,,Core1 - Core2
 192.168.255.212/30,npflan,,npflan,,,Active,Link Net,,Core 1 - Core 2
 192.168.255.216/30,npflan,,npflan,,,Active,Link Net,,Marketing - C1
+192.168.255.220/30,npflan,,npflan,,,Active,,,GRE TUNNEL FROM S7 - E2
 192.168.255.224/27,npflan,,npflan,,,Active,Link Net,,S - ring linknets
 192.168.255.224/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,
 192.168.255.228/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,
@@ -389,8 +284,7 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 192.168.255.232/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,
 192.168.255.232/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,
 192.168.255.236/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,
-192.168.255.240/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,S6 - Core1
-192.168.255.244/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,S3 - S6
-192.168.255.248/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,S7 - S3
-192.168.255.252/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,Core2 - S7
-192.168.255.0/24,npflan_san,,,,,Active,,,Kubernetes SAN Link Net
+192.168.255.240/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,Core1 - S6
+192.168.255.244/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,S6 - S3
+192.168.255.248/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,S3 - S7
+192.168.255.252/30,npflan,,npflan,npflan-vlans,1,Active,Link Net,,S7 - Core2
