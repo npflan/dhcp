@@ -14,8 +14,8 @@ with open(datafile, 'wb+') as f:
 
 reader = csv.reader(io.StringIO(data.decode()), delimiter=',', quotechar='|')
 
-print('default-lease-time 600;')
-print('max-lease-time 7200;\n')
+print('default-lease-time 7200;')
+print('max-lease-time 28800;\n')
 print('authoritative;\n')
 print('option domain-name "npf";\n')
 print('option domain-name-servers 10.96.5.1;\n')
