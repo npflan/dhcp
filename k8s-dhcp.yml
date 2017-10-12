@@ -45,7 +45,7 @@ items:
               memory: 100M
 
         - name: dhcpd-exporter
-          image: npflan/dhcpd_exporter:0.1
+          image: npflan/dhcpd_exporter:0.2
           volumeMounts:
             - mountPath: /var/lib/dhcp
               name: iscsipd-dhcp-1
@@ -126,10 +126,10 @@ items:
               memory: 100M
 
         - name: dhcpd-exporter
-          image: npflan/dhcpd_exporter:0.1
+          image: npflan/dhcpd_exporter:0.2
           volumeMounts:
             - mountPath: /var/lib/dhcp
-              name: iscsipd-dhcp-1
+              name: iscsipd-dhcp-2
           resources:
             limits:
               memory: 100M
