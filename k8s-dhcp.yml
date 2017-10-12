@@ -43,6 +43,15 @@ items:
           resources:
             limits:
               memory: 100M
+
+        - name: dhcpd-exporter
+          image: npflan/dhcpd_exporter:0.1
+          volumeMounts:
+            - mountPath: /var/lib/dhcp
+              name: iscsipd-dhcp-1
+          resources:
+            limits:
+              memory: 100M
         volumes:
           - name: iscsipd-dhcp-1
             iscsi:
@@ -115,6 +124,16 @@ items:
           resources:
             limits:
               memory: 100M
+
+        - name: dhcpd-exporter
+          image: npflan/dhcpd_exporter:0.1
+          volumeMounts:
+            - mountPath: /var/lib/dhcp
+              name: iscsipd-dhcp-1
+          resources:
+            limits:
+              memory: 100M
+
         volumes:
           - name: iscsipd-dhcp-2
             iscsi:
@@ -191,6 +210,10 @@ items:
         protocol: TCP
         port: 647
         targetPort: 647
+      - name: dhcpd-exporter
+        protocol: TCP
+        port: 8000
+        targetPort: 8000
 - kind: Service
   apiVersion: v1
   metadata:
@@ -209,3 +232,7 @@ items:
         protocol: TCP
         port: 647
         targetPort: 647
+      - name: dhcpd-exporter
+        protocol: TCP
+        port: 8000
+        targetPort: 8000
