@@ -62,7 +62,7 @@ TOTAL_LEASES.set_function(lambda: len(leases.get()))
 TOTAL_CURRENT.set_function(lambda: len(leases.get_current().keys()))
 
 # Start HTTP server
-start_http_server(8000)
+start_http_server(9405)
 
 while True:
     # Instantiate and parse DHCPD leases file
