@@ -46,7 +46,7 @@ kubectl create --dry-run configmap dhcpd --from-file=dhcpd.conf -n dhcp -o yaml 
 After the config is updated, log into a pod in the deployment and test the config. Make sure the new config has been propagated, as there is a TTL cache on kubernetes config maps.
 
 ``` shell
-  dhcpd -t -cf /dhcp/config/dhcpd.conf
+dhcpd -t -cf /dhcp/config/dhcpd.conf
 ```
 
 If the config is syntactically valid, "reload" dhcpd by restarting it, if you just kill dhcpd kubernetes will restart the pod.

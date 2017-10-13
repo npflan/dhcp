@@ -28,11 +28,7 @@ items:
         subdomain: dhcp-pod
         containers:
         - name: dhcpd
-          image: npflan/dhcp:fix-port
-          args:
-            - '-d'
-            - '-cf'
-            - '/dhcp/config/dhcpd.conf'
+          image: npflan/dhcp:optimize-0.5
           volumeMounts:
             - mountPath: /var/lib/dhcp
               name: iscsipd-dhcp-1
@@ -44,14 +40,6 @@ items:
             limits:
               memory: 100M
 
-        - name: dhcpd-exporter
-          image: npflan/dhcpd_exporter:0.2
-          volumeMounts:
-            - mountPath: /var/lib/dhcp
-              name: iscsipd-dhcp-1
-          resources:
-            limits:
-              memory: 100M
         volumes:
           - name: iscsipd-dhcp-1
             iscsi:
@@ -109,11 +97,7 @@ items:
         subdomain: dhcp-pod
         containers:
         - name: dhcpd
-          image: npflan/dhcp:fix-port
-          args:
-            - '-d'
-            - '-cf'
-            - '/dhcp/config/dhcpd.conf'
+          image: npflan/dhcp:optimize-0.5
           volumeMounts:
             - mountPath: /var/lib/dhcp
               name: iscsipd-dhcp-2
@@ -121,15 +105,6 @@ items:
               name: dhcp
             - mountPath: /dhcp/failover
               name: dhcp-failover
-          resources:
-            limits:
-              memory: 100M
-
-        - name: dhcpd-exporter
-          image: npflan/dhcpd_exporter:0.2
-          volumeMounts:
-            - mountPath: /var/lib/dhcp
-              name: iscsipd-dhcp-2
           resources:
             limits:
               memory: 100M
@@ -212,8 +187,8 @@ items:
         targetPort: 647
       - name: dhcpd-exporter
         protocol: TCP
-        port: 8000
-        targetPort: 8000
+        port: 9405
+        targetPort: 9405
 - kind: Service
   apiVersion: v1
   metadata:
@@ -234,5 +209,5 @@ items:
         targetPort: 647
       - name: dhcpd-exporter
         protocol: TCP
-        port: 8000
-        targetPort: 8000
+        port: 9405
+        targetPort: 9405

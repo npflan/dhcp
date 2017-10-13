@@ -2,3 +2,4 @@ prometheus_client
 isc_dhcp_leases
 ipaddress
 urllib3
+gunicorn

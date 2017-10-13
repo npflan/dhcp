@@ -2,6 +2,8 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.0.0.0/24,npflan,,npflan,,,Active,Firewall Net,,
 10.0.1.0/24,npflan,,npflan,,,Active,Services,,Network Services
 10.0.11.0/24,npflan,,,,,Active,Wireless,,Wifi net til netværksteamet (Administrativt ude på dist punkterne)
+10.0.248.0/25,npflan,,npflan,,,Active,Wireless,,AP-MGMT
+10.0.248.128/25,npflan,,npflan,,,Active,Wireless,,AP-MGMT
 10.1.11.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 11
 10.1.12.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 12
 10.1.13.0/24,npflan,,npflan,,,Active,Access,,Dist 1 - Vlan 13
@@ -147,9 +149,10 @@ prefix,vrf,tenant,site,vlan_group,vlan_vid,status,role,is_pool,description
 10.14.18.0/24,npflan,,npflan,,,Active,Access,,Dist 14 - Vlan 18
 10.14.248.0/24,npflan,,npflan,,,Active,,,AP-MGMT
 10.14.250.0/24,npflan,,npflan,,,Active,Access,,CCTV
-10.100.0.0/22,npflan,,npflan,,,Active,,True,gameserver rack 3
-10.100.4.0/22,npflan,,npflan,,,Active,,,gameserver rack 6
-10.100.8.0/22,npflan,,npflan,,,Active,,True,gameserver rack 7
+10.57.10.0/24,npflan,,,,,Active,Access,,
+10.100.0.0/22,npflan,,npflan,npflan-gameserver,100,Active,Server Net,True,gameserver rack 3
+10.100.4.0/22,npflan,,npflan,npflan-gameserver,100,Active,Server Net,True,gameserver rack 6
+10.100.8.0/22,npflan,,npflan,npflan-gameserver,100,Active,Server Net,True,gameserver rack 7
 10.100.103.0/24,npflan,,npflan,,100,Active,Server Net,,Public Rack #3
 10.100.106.0/24,npflan,,npflan,,100,Active,Server Net,,Public Rack #6
 10.100.107.0/24,npflan,,npflan,,100,Active,Server Net,,Public Rack #7
