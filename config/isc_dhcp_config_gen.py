@@ -12,7 +12,7 @@ datafile = os.path.join(os.path.dirname(__file__), 'data.csv')
 with open(datafile, 'wb+') as f:
     f.write(data)
 
-reader = csv.reader(io.StringIO(data.decode()), delimiter=',', quotechar='|')
+reader = csv.DictReader(io.StringIO(data.decode()), delimiter=',', quotechar='|')
 
 print('default-lease-time 7200;')
 print('max-lease-time 28800;\n')
@@ -36,15 +36,14 @@ elif len(sys.argv) > 1 and sys.argv[1] == "slave":
 else:
     print('include "/dhcp/failover/dhcpd.failover";\n')
 
-print('subnet 10.90.0.0 netmask 255.255.0.0 {')
-print('}\n')
+print('subnet 10.90.0.0 netmask 255.255.0.0 {}\n')
 
 for row in reader:
-    if row[7].lower() == "Access".lower() or row[7].lower() == "Wireless".lower() or row[9].lower() == "AP-MGMT".lower():
-        if row[9].lower() == 'Wireless Networks'.lower():
+    if row['role'].lower() == "Access".lower() or row['role'].lower() == "Wireless".lower() or row['description'].lower() == "AP-MGMT".lower():
+        if row['description'].lower() == 'Wireless Networks'.lower():
             continue;
-        print("# " + ' - '.join((n for n in (row[7], row[9]) if n)))
-        ip = ipaddress.IPv4Network(row[0])
+        print("# " + ' - '.join((n for n in (row['role'], row['description']) if n)))
+        ip = ipaddress.IPv4Network(row['prefix'])
         parts = ip.with_netmask.split('/')
         network = parts[0]
         subnetmask = parts[1]
