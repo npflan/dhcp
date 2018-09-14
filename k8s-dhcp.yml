@@ -38,13 +38,13 @@ items:
               name: dhcp-failover
           resources:
             limits:
-              memory: 100M
+              memory: 1024M
 
         volumes:
           - name: iscsipd-dhcp-1
             iscsi:
               targetPortal: 192.168.255.10:3260
-              portals: ['192.168.255.11:3260', '192.168.255.12:3260', '192.168.255.13:3260', '192.168.255.14:3260']
+              portals: ['192.168.255.10:3260']
               iqn: iqn.2001-05.com.equallogic:0-8a0906-d9eb41907-b66c58382ac59d03-k8s.isc.dhcp1
               lun: 0
               fsType: ext4
@@ -107,13 +107,13 @@ items:
               name: dhcp-failover
           resources:
             limits:
-              memory: 100M
+              memory: 1024M
 
         volumes:
           - name: iscsipd-dhcp-2
             iscsi:
               targetPortal: 192.168.255.10:3260
-              portals: ['192.168.255.11:3260', '192.168.255.12:3260', '192.168.255.13:3260', '192.168.255.14:3260']
+              portals: ['192.168.255.10:3260']
               iqn: iqn.2001-05.com.equallogic:0-8a0906-dbfb41907-cf1c58382af59d03-k8s.isc.dhcp2
               lun: 0
               fsType: ext4
