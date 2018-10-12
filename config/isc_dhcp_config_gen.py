@@ -2,11 +2,12 @@ import csv
 import ipaddress
 import sys
 import os
-import urllib.request
+from urllib.request import Request, urlopen
 import io
 
 netbox = 'https://netbox.minserver.dk/ipam/prefixes/?status=1&parent=&family=&q=&vrf=npflan&mask_length=&export'
-data = urllib.request.urlopen(netbox).read()
+req = Request(netbox, headers={'User-Agent': 'Mozilla/5.0'})
+data = urlopen(req).read()
 
 datafile = os.path.join(os.path.dirname(__file__), 'data.csv')
 with open(datafile, 'wb+') as f:
